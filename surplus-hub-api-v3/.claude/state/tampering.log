@@ -1,0 +1,4 @@
+[2026-02-21T13:00:22+09:00] FILE=/Users/jeongseongchae/dev/owner/surplus-hub-api-v3/app/tests/api/test_auth.py TOOL=Edit
+  ⚠️ Assertion removal detected / アサーション削除を検出 (assert: 15 → 14)
+[2026-02-21T18:41:05+09:00] FILE=/Users/jeongseongchae/dev/owner/surplus-hub-api-v3/app/tests/api/test_ws_messaging.py TOOL=Edit
+  ⚠️ Assertion removal detected / アサーション削除を検出 (assert: 6 → 5)

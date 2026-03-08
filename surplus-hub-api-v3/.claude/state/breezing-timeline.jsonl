@@ -1,0 +1,34 @@
+{"event":"task_completed","teammate":"5","task_id":"Round 5: 테스트 작성 + 전체 검증","subject":"test_ai_search.py, test_ai_assist.py 작성. pytest 실행하여 전체 테스트 통과 확인","description":"","timestamp":"2026-02-20T16:15:54Z"}
+{"event":"task_completed","teammate":"8","task_id":"Phase 4: 최종 검증 및 교차 리뷰","subject":"검증 작업:\\n1. pytest tests/ -v 실행\\n2. 동시성 테스트 실행\\n3. 프론트엔드 빌드 검증 (pnpm build)\\n4. devil-advocate 최종 코드 리뷰","description":"","timestamp":"2026-02-22T01:29:53Z"}
+{"event":"teammate_idle","teammate":"integration-tester","team":"surplus-hub-integration","timestamp":"2026-02-22T01:30:10Z"}
+{"event":"teammate_idle","teammate":"backend-impl","team":"surplus-hub-integration","timestamp":"2026-02-22T01:30:12Z"}
+{"event":"teammate_idle","teammate":"frontend-analyst","team":"surplus-hub-integration","timestamp":"2026-02-22T01:30:15Z"}
+{"event":"teammate_idle","teammate":"test-impl","team":"surplus-hub-integration","timestamp":"2026-02-22T01:30:16Z"}
+{"event":"task_completed","teammate":"9","task_id":"frontend-analyst","subject":"당신은 surplus-hub-integration 팀의 frontend-analyst입니다.\\n\\n## 임무\\nsurplus-hub-react 프론트엔드 프로젝트를 분석하여 더미/Moc","description":"","timestamp":"2026-02-22T01:31:48Z"}
+{"event":"task_completed","teammate":"15","task_id":"integration-tester","subject":"당신은 surplus-hub-integration 팀의 integration-tester입니다.\\n\\n## 임무\\n프론트엔드와 백엔드 간의 API 계약을 검증하고, 동시성 테스트 시나리","description":"","timestamp":"2026-02-22T01:31:48Z"}
+{"event":"task_completed","teammate":"16","task_id":"API 스키마 불일치 검증","subject":"ChatRoom, Auth, Material 등의 API 스키마를 프론트엔드/백엔드 양쪽에서 비교 분석","description":"","timestamp":"2026-02-22T01:31:48Z"}
+{"event":"task_completed","teammate":"17","task_id":"프론트엔드 API 호출 패턴 분석","subject":"API 클라이언트 코드, hooks, 에러 처리, 인증 토큰 전달 방식 분석","description":"","timestamp":"2026-02-22T01:31:49Z"}
+{"event":"task_completed","teammate":"18","task_id":"devil-advocate","subject":"당신은 surplus-hub-integration 팀의 devil-advocate입니다.\\n\\n## 임무\\n3개 분석 보고서의 결론을 교차 검증하고, 가정을 반박하여 최종 구현 범위를 ","description":"","timestamp":"2026-02-22T01:31:49Z"}
+{"event":"teammate_idle","teammate":"devil-advocate","team":"surplus-hub-integration","timestamp":"2026-02-22T01:33:11Z"}
+{"event":"teammate_idle","teammate":"search-agent","team":"surplus-hub-p3","timestamp":"2026-02-22T05:12:03Z"}
+{"event":"teammate_idle","teammate":"search-agent","team":"surplus-hub-p3","timestamp":"2026-02-22T05:12:49Z"}
+{"event":"teammate_idle","teammate":"search-agent","team":"surplus-hub-p3","timestamp":"2026-02-22T05:13:34Z"}
+{"event":"teammate_idle","teammate":"search-agent","team":"surplus-hub-p3","timestamp":"2026-02-22T05:14:19Z"}
+{"event":"task_completed","teammate":"1","task_id":"백엔드: UserStats에 wishlistCount, communityPostsCount 추가","subject":"crud_user.py의 get_user_stats 메서드에 MaterialLike, Post 모델 import 및 카운트 추가","description":"","timestamp":"2026-02-22T14:18:49Z"}
+{"event":"task_completed","teammate":"2","task_id":"프론트 UserStats 타입 + API 업데이트","subject":"user.ts 타입에 wishlistCount, communityPostsCount 추가. fetchUserStats에 매핑 추가.","description":"","timestamp":"2026-02-22T14:19:05Z"}
+{"event":"task_completed","teammate":"3","task_id":"프론트 API 함수 추가 (fetchMyWishlist, community authorId)","subject":"material.ts에 fetchMyWishlist 추가. community.ts에 authorId 파라미터 지원 추가. 백엔드 community 엔드포인트에 author_id 필","description":"","timestamp":"2026-02-22T14:19:31Z"}
+{"event":"task_completed","teammate":"4","task_id":"프론트 hooks 추가 (useMyWishlist)","subject":"useMaterials.ts에 useMyWishlist hook 추가","description":"","timestamp":"2026-02-22T14:22:22Z"}
+{"event":"task_completed","teammate":"5","task_id":"프론트 프로필 서브페이지 4개 생성","subject":"sales, purchases, wishlist, posts 페이지 생성","description":"","timestamp":"2026-02-22T14:25:32Z"}
+{"event":"task_completed","teammate":"6","task_id":"프로필 메인 페이지 수정 (라우팅 + 동적 카운트)","subject":"프로필 메인 페이지에서 Activity Grid 클릭 라우팅, Settings 메뉴 동작 추가","description":"","timestamp":"2026-02-22T14:26:56Z"}
+{"event":"task_completed","teammate":"frontend-admin","task_id":"6","subject":"관리자 프론트엔드 API 연동 + 완성","description":"Stream D - Phase 1.2 (백엔드 API 완료 후)\\n\\n관리자 프론트엔드의 실 API 연동과 페이지 완성.\\n\\n구현 범위:\\n1. packages/core/src/api/a","timestamp":"2026-03-01T05:38:01Z"}
+{"event":"teammate_idle","teammate":"frontend-admin","team":"surplushub-phase1","timestamp":"2026-03-01T05:38:24Z"}
+{"event":"teammate_idle","teammate":"frontend-admin","team":"surplushub-phase1","timestamp":"2026-03-01T05:40:45Z"}
+{"event":"teammate_idle","teammate":"frontend-admin","team":"surplushub-phase1","timestamp":"2026-03-01T05:41:30Z"}
+{"event":"task_completed","teammate":"7","task_id":"공유 파일 통합 + Alembic 마이그레이션","subject":"Phase 1.3 - team-lead 직접 수행\\n\\n공유 파일 머지와 Alembic 마이그레이션 통합.\\n\\n작업:\\n1. app/models/__init__.py에 신규 모델 impo","description":"","timestamp":"2026-03-01T05:46:55Z"}
+{"event":"task_completed","teammate":"verifier","task_id":"8","subject":"교차 검증 + 통합 테스트","description":"Phase 1.4 - verifier 수행\\n\\n전체 시스템 교차 검증.\\n\\n검증 항목:\\n1. 동시성: 두 관리자가 동시에 같은 사용자 제재 시\\n2. 엣지케이스: 거래 중 사용자 차단 ","timestamp":"2026-03-01T05:49:49Z"}
+{"event":"teammate_idle","teammate":"verifier","team":"surplushub-phase1","timestamp":"2026-03-01T05:49:59Z"}
+{"event":"teammate_idle","teammate":"verifier","team":"surplushub-phase1","timestamp":"2026-03-01T05:51:19Z"}
+{"event":"task_completed","teammate":"15","task_id":"Fix C2: Last SUPER_ADMIN self-demotion guard","subject":"admin_roles.py의 update_admin_role에서 마지막 SUPER_ADMIN이 자기 역할을 변경하지 못하도록 가드 추가","description":"","timestamp":"2026-03-01T05:54:01Z"}
+{"event":"task_completed","teammate":"16","task_id":"Fix C3: BAN deactivation race condition","subject":"crud_moderation.py의 deactivate_sanction에서 다른 활성 BAN이 있는지 확인 후 is_active 복구","description":"","timestamp":"2026-03-01T05:54:01Z"}
+{"event":"task_completed","teammate":"17","task_id":"Fix H1: Replace datetime.utcnow() with timezone-aware","subject":"crud_dashboard.py의 datetime.utcnow() 4곳을 datetime.now(timezone.utc)로 변경","description":"","timestamp":"2026-03-01T05:54:02Z"}
+{"event":"task_completed","teammate":"18","task_id":"Run all tests to verify fixes","subject":"131개 테스트 전체 실행하여 수정 사항 검증","description":"","timestamp":"2026-03-01T05:55:28Z"}

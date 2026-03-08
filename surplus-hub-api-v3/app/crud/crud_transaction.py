@@ -1,0 +1,95 @@
+from typing import List, Optional
+from datetime import datetime, timezone
+
+from sqlalchemy import desc, or_, select
+from sqlalchemy.orm import Session, joinedload
+
+from app.crud.base import CRUDBase
+from app.models.material import Material
+from app.models.transaction import Transaction
+from app.schemas.transaction import TransactionCreate
+
+
+class CRUDTransaction(CRUDBase[Transaction, TransactionCreate, dict]):
+    def create_transaction(
+        self,
+        db: Session,
+        *,
+        material_id: int,
+        seller_id: int,
+        buyer_id: int,
+        price: int,
+        note: Optional[str] = None,
+    ) -> Transaction:
+        # Lock the material row to prevent race conditions
+        material = db.execute(
+            select(Material).where(Material.id == material_id).with_for_update()
+        ).scalar_one_or_none()
+
+        if not material or material.status != "ACTIVE":
+            raise ValueError("Material is not available for transaction")
+
+        # Atomically reserve the material
+        material.status = "RESERVED"
+
+        db_obj = Transaction(
+            material_id=material_id,
+            seller_id=seller_id,
+            buyer_id=buyer_id,
+            price=price,
+            note=note,
+        )
+        db.add(db_obj)
+        db.commit()
+        db.refresh(db_obj)
+        return db_obj
+
+    def get_user_transactions(
+        self, db: Session, *, user_id: int, skip: int = 0, limit: int = 20, role: Optional[str] = None
+    ) -> tuple[List[Transaction], int]:
+        query = db.query(Transaction).options(
+            joinedload(Transaction.seller),
+            joinedload(Transaction.buyer),
+            joinedload(Transaction.material),
+        )
+
+        if role == "seller":
+            query = query.filter(Transaction.seller_id == user_id)
+        elif role == "buyer":
+            query = query.filter(Transaction.buyer_id == user_id)
+        else:
+            query = query.filter(
+                or_(
+                    Transaction.seller_id == user_id,
+                    Transaction.buyer_id == user_id,
+                )
+            )
+
+        query = query.order_by(desc(Transaction.created_at))
+
+        total = query.count()
+        items = query.offset(skip).limit(limit).all()
+        return items, total
+
+    def confirm_transaction(
+        self, db: Session, *, db_obj: Transaction
+    ) -> Transaction:
+        db_obj.status = "CONFIRMED"
+        db_obj.confirmed_at = datetime.now(timezone.utc)
+        db.add(db_obj)
+        db.commit()
+        db.refresh(db_obj)
+        return db_obj
+
+    def complete_transaction(
+        self, db: Session, *, db_obj: Transaction
+    ) -> Transaction:
+        db_obj.status = "COMPLETED"
+        db_obj.completed_at = datetime.now(timezone.utc)
+        db.add(db_obj)
+        db.commit()
+        db.refresh(db_obj)
+        return db_obj
+
+
+crud_transaction = CRUDTransaction(Transaction)

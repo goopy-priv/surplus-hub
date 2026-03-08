@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-03-02T11:11:50.145Z",
+  "sessionId": "",
+  "wipTasks": [],
+  "recentEdits": [
+    ".claude/bash-command-log.txt",
+    ".claude/logs/subagent-history.jsonl",
+    ".claude/sessions/.last_inbox_check",
+    ".claude/sessions/broadcast.md",
+    ".claude/state/breezing-timeline.jsonl",
+    ".claude/state/harness-usage.json",
+    ".claude/state/precompact-snapshot.json",
+    ".claude/state/tampering.log",
+    ".env",
+    ".env.example",
+    ".idea/misc.xml",
+    ".idea/modules.xml",
+    ".plan-translation.md",
+    "INTEGRATION_REPORT.md",
+    "PLAN_MAP_AGENT.md",
+    "alembic/versions/__pycache__/75ef6cef2f88_add_clerk_id_and_nullable_password.cpython-314.pyc",
+    "alembic/versions/__pycache__/ai_pgvector_001.cpython-314.pyc",
+    "alembic/versions/__pycache__/chat_improvements.cpython-314.pyc",
+    "alembic/versions/__pycache__/chatroom_unique_constraint.cpython-314.pyc",
+    "alembic/versions/__pycache__/de88dda64b34_add_review_unique_constraint_and_rating_.cpython-314.pyc"
+  ],
+  "metrics": null
+}

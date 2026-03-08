@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-03-02T11:05:20.004Z",
+  "skills": {},
+  "commands": {
+    "insights": {
+      "count": 1,
+      "lastUsed": "2026-02-21T10:05:24.899Z"
+    },
+    "Users/jeongseongchae/dev/owner/surplus-hub-react": {
+      "count": 1,
+      "lastUsed": "2026-02-22T14:11:56.583Z"
+    },
+    "Users/jeongseongchae/dev/owner/service-account": {
+      "count": 1,
+      "lastUsed": "2026-02-28T12:37:28.642Z"
+    },
+    "Users/jeongseongchae/dev/owner/surplus-hub-api-v3": {
+      "count": 1,
+      "lastUsed": "2026-03-02T11:05:20.003Z"
+    }
+  },
+  "agents": {
+    "claude-code-harness:task-worker": {
+      "count": 11,
+      "lastUsed": "2026-02-21T09:39:16.540Z"
+    },
+    "Explore": {
+      "count": 5,
+      "lastUsed": "2026-02-22T11:23:54.191Z"
+    },
+    "Plan": {
+      "count": 1,
+      "lastUsed": "2026-02-22T11:26:56.575Z"
+    },
+    "general-purpose": {
+      "count": 1,
+      "lastUsed": "2026-02-22T14:19:49.241Z"
+    },
+    "claude-code-harness:code-reviewer": {
+      "count": 1,
+      "lastUsed": "2026-03-01T05:47:24.228Z"
+    }
+  },
+  "hooks": {
+    "pretooluse-guard": {
+      "triggered": 1,
+      "blocked": 1,
+      "lastTriggered": "2026-02-22T01:32:56.119Z"
+    }
+  }
+}
