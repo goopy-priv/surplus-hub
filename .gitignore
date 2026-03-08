@@ -181,3 +181,5 @@
 /.claude/state/tooling-policy.json
 /surplus-hub-react/apps/web/.claude/state/tooling-policy.json
 /.idea/vcs.xml
+.claude/state/
+surplus-hub-api-v3/.claude/bash-command-log.txt
