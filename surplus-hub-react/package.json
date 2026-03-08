@@ -1,7 +1,7 @@
 {
   "name": "temp_setup",
   "private": true,
-  "packageManager": "npm@11.3.0",
+  "packageManager": "npm@11.10.1",
   "scripts": {
     "build": "turbo run build --filter=web",
     "build:all": "turbo run build",
@@ -32,5 +32,9 @@
   "dependencies": {
     "@react-native-community/cli-server-api": "^20.1.1",
     "expo": "^55.0.0"
+  },
+  "overrides": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }

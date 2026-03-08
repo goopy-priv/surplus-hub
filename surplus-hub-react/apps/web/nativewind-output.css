@@ -1481,168 +1481,25 @@ _NativeWindStyleSheet.create({
     },
     "md:hidden@0": {
       "display": "none"
-    },
-    "container@5": {
-      "maxWidth": 640
-    },
-    "container@6": {
-      "maxWidth": 768
-    },
-    "container@7": {
-      "maxWidth": 1024
-    },
-    "container@8": {
-      "maxWidth": 1280
-    },
-    "container@9": {
-      "maxWidth": 1536
-    },
-    "50%@1": {
-      "opacity": 0.5
-    },
-    "to@1": {
-      "transform": [{
-        "rotate": "360deg"
-      }]
-    },
-    "dark:border-gray-700@1": {
-      "borderTopColor": "rgba(55, 65, 81, 1)",
-      "borderRightColor": "rgba(55, 65, 81, 1)",
-      "borderBottomColor": "rgba(55, 65, 81, 1)",
-      "borderLeftColor": "rgba(55, 65, 81, 1)"
-    },
-    "dark:bg-gray-700@3": {
-      "backgroundColor": "rgba(55, 65, 81, 1)"
-    },
-    "dark:bg-gray-700@4": {
-      "backgroundColor": "rgba(55, 65, 81, 1)"
-    },
-    "dark:bg-gray-700@5": {
-      "backgroundColor": "rgba(55, 65, 81, 1)"
-    },
-    "dark:bg-gray-800@3": {
-      "backgroundColor": "rgba(31, 41, 55, 1)"
-    },
-    "dark:bg-gray-800@4": {
-      "backgroundColor": "rgba(31, 41, 55, 1)"
-    },
-    "dark:bg-gray-800@5": {
-      "backgroundColor": "rgba(31, 41, 55, 1)"
-    },
-    "dark:bg-gray-900@3": {
-      "backgroundColor": "rgba(17, 24, 39, 1)"
-    },
-    "dark:bg-gray-900@4": {
-      "backgroundColor": "rgba(17, 24, 39, 1)"
-    },
-    "dark:bg-gray-900@5": {
-      "backgroundColor": "rgba(17, 24, 39, 1)"
-    },
-    "dark:bg-gray-900/80@1": {
-      "backgroundColor": "rgba(17, 24, 39, 0.8)"
-    },
-    "dark:text-gray-100@5": {
-      "color": "rgba(243, 244, 246, 1)"
-    },
-    "dark:text-gray-100@6": {
-      "color": "rgba(243, 244, 246, 1)"
-    },
-    "dark:text-gray-100@7": {
-      "color": "rgba(243, 244, 246, 1)"
-    },
-    "dark:text-gray-100@8": {
-      "color": "rgba(243, 244, 246, 1)"
-    },
-    "dark:text-gray-100@9": {
-      "color": "rgba(243, 244, 246, 1)"
-    },
-    "dark:text-gray-200@5": {
-      "color": "rgba(229, 231, 235, 1)"
-    },
-    "dark:text-gray-200@6": {
-      "color": "rgba(229, 231, 235, 1)"
-    },
-    "dark:text-gray-200@7": {
-      "color": "rgba(229, 231, 235, 1)"
-    },
-    "dark:text-gray-200@8": {
-      "color": "rgba(229, 231, 235, 1)"
-    },
-    "dark:text-gray-200@9": {
-      "color": "rgba(229, 231, 235, 1)"
-    },
-    "dark:text-gray-300@5": {
-      "color": "rgba(209, 213, 219, 1)"
-    },
-    "dark:text-gray-300@6": {
-      "color": "rgba(209, 213, 219, 1)"
-    },
-    "dark:text-gray-300@7": {
-      "color": "rgba(209, 213, 219, 1)"
-    },
-    "dark:text-gray-300@8": {
-      "color": "rgba(209, 213, 219, 1)"
-    },
-    "dark:text-gray-300@9": {
-      "color": "rgba(209, 213, 219, 1)"
-    },
-    "dark:text-gray-400@5": {
-      "color": "rgba(156, 163, 175, 1)"
-    },
-    "dark:text-gray-400@6": {
-      "color": "rgba(156, 163, 175, 1)"
-    },
-    "dark:text-gray-400@7": {
-      "color": "rgba(156, 163, 175, 1)"
-    },
-    "dark:text-gray-400@8": {
-      "color": "rgba(156, 163, 175, 1)"
-    },
-    "dark:text-gray-400@9": {
-      "color": "rgba(156, 163, 175, 1)"
-    },
-    "dark:text-gray-500@5": {
-      "color": "rgba(107, 114, 128, 1)"
-    },
-    "dark:text-gray-500@6": {
-      "color": "rgba(107, 114, 128, 1)"
-    },
-    "dark:text-gray-500@7": {
-      "color": "rgba(107, 114, 128, 1)"
-    },
-    "dark:text-gray-500@8": {
-      "color": "rgba(107, 114, 128, 1)"
-    },
-    "dark:text-gray-500@9": {
-      "color": "rgba(107, 114, 128, 1)"
-    },
-    "sm:flex-row@1": {
-      "flexDirection": "row"
-    },
-    "md:flex@1": {
-      "display": "flex"
-    },
-    "md:hidden@1": {
-      "display": "none"
     }
   },
   atRules: {
-    "container": [[["media", "(min-width: 640px)"]], [["media", "(min-width: 768px)"]], [["media", "(min-width: 1024px)"]], [["media", "(min-width: 1280px)"]], [["media", "(min-width: 1536px)"]], [["media", "(min-width: 640px)"]], [["media", "(min-width: 768px)"]], [["media", "(min-width: 1024px)"]], [["media", "(min-width: 1280px)"]], [["media", "(min-width: 1536px)"]]],
-    "50%": [[["keyframes", "pulse"]], [["keyframes", "pulse"]]],
-    "to": [[["keyframes", "spin"]], [["keyframes", "spin"]]],
-    "dark:border-gray-700": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:bg-gray-700": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:bg-gray-800": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:bg-gray-900": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:bg-gray-900/80": [[["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"]]],
-    "dark:text-gray-100": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:text-gray-200": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:text-gray-300": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:text-gray-400": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "dark:text-gray-500": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
-    "sm:flex-row": [[["media", "(min-width: 640px)"]], [["media", "(min-width: 640px)"]]],
-    "md:flex": [[["media", "(min-width: 768px)"]], [["media", "(min-width: 768px)"]]],
-    "md:hidden": [[["media", "(min-width: 768px)"]], [["media", "(min-width: 768px)"]]]
+    "container": [[["media", "(min-width: 640px)"]], [["media", "(min-width: 768px)"]], [["media", "(min-width: 1024px)"]], [["media", "(min-width: 1280px)"]], [["media", "(min-width: 1536px)"]]],
+    "50%": [[["keyframes", "pulse"]]],
+    "to": [[["keyframes", "spin"]]],
+    "dark:border-gray-700": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:bg-gray-700": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:bg-gray-800": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:bg-gray-900": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:bg-gray-900/80": [[["media", "(prefers-color-scheme: dark)"]]],
+    "dark:text-gray-100": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:text-gray-200": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:text-gray-300": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:text-gray-400": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "dark:text-gray-500": [[["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]], [["media", "(prefers-color-scheme: dark)"], ["media", "(prefers-color-scheme: dark)"]]],
+    "sm:flex-row": [[["media", "(min-width: 640px)"]]],
+    "md:flex": [[["media", "(min-width: 768px)"]]],
+    "md:hidden": [[["media", "(min-width: 768px)"]]]
   },
   transforms: {
     "to": true
