@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #ed701d;
+    --primary-foreground: #ffffff;
+    --background: #f9f7f6;
+    --foreground: #151c28;
+    --card: #ffffff;
+    --card-foreground: #151c28;
+    --muted: #f1f0ee;
+    --muted-foreground: #6a7181;
+    --accent: #fdf0e7;
+    --accent-foreground: #a54a0d;
+    --secondary: #eeeff2;
+    --secondary-foreground: #151c28;
+    --border: #e2e4e9;
+    --input: #e2e4e9;
+    --ring: #ed701d;
+    --destructive: #dc2828;
+    --success: #21c45d;
+    --warning: #f59f0a;
+    --info: #1485f5;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic", sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .manner-gauge {
+    background: linear-gradient(90deg, #21c45d, #f59f0a, #dc2828);
+  }
+
+  .card-shadow {
+    box-shadow: 0 2px 12px -2px rgba(26, 26, 38, 0.08);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 8px 24px -4px rgba(26, 26, 38, 0.12);
+  }
+
+  .fab-gradient {
+    background: linear-gradient(135deg, var(--primary), #e65c00);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

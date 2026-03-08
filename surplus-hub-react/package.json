@@ -1,0 +1,36 @@
+{
+  "name": "temp_setup",
+  "private": true,
+  "packageManager": "npm@11.3.0",
+  "scripts": {
+    "build": "turbo run build --filter=web",
+    "build:all": "turbo run build",
+    "start": "node apps/web/.next/standalone/server.js",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "smoke:parity:local": "bash scripts/parity_local_smoke.sh",
+    "e2e:web:auth": "npm run e2e --workspace web -- auth-flow.spec.ts",
+    "e2e:web:business": "npm run e2e --workspace web -- business-flow.spec.ts",
+    "e2e:mobile:auth": "npm run e2e --workspace mobile -- auth-flow.spec.ts",
+    "e2e:mobile:business": "npm run e2e --workspace mobile -- business-flow.spec.ts"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "tailwindcss": "3.3.2",
+    "turbo": "^2.7.5",
+    "typescript": "~5.9.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@react-native-community/cli-server-api": "^20.1.1",
+    "expo": "^55.0.0"
+  }
+}

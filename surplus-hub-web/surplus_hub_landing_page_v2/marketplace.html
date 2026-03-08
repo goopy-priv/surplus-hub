@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>마켓플레이스 - 서플러스 허브</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#216fed",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden transition-colors duration-300">
+    <nav
+        class="sticky top-0 z-50 w-full border-b border-[#f0f2f4] dark:border-gray-800 bg-white/90 dark:bg-[#101722]/90 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <a class="flex items-center gap-2 text-primary" href="index.html">
+                    <div class="size-8 rounded bg-primary flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-2xl">construction</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-[#111418] dark:text-white">짜투리</span>
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <div class="flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors text-[#111418] dark:text-gray-300"
+                        href="service.html">서비스 소개</a>
+                    <a class="text-sm font-medium text-primary" href="marketplace.html">마켓플레이스</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors text-[#111418] dark:text-gray-300"
+                        href="community.html">커뮤니티</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors text-[#111418] dark:text-gray-300"
+                        href="support.html">고객지원</a>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center justify-center rounded-lg px-4 py-2 text-sm font-bold bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-[#111418] dark:text-white transition-colors">로그인</button>
+                    <button
+                        class="flex items-center justify-center rounded-lg px-4 py-2 text-sm font-bold bg-primary hover:bg-blue-600 text-white shadow-sm transition-colors">판매
+                        등록</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Marketplace Hero -->
+        <section class="py-12 bg-white dark:bg-[#101722]">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-5xl font-black mb-4 text-[#111418] dark:text-white">건설 자재 마켓플레이스</h1>
+                <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+                    필요한 자재를 검색하거나, 잉여 자재를 등록하여 수익을 창출하세요.
+                    <br>건설 현장 주변의 검증된 판매자와 직거래할 수 있습니다.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto relative mb-12">
+                    <input type="text" placeholder="검색어 입력 (예: 시멘트, 철근, 목재)"
+                        class="w-full h-14 pl-12 pr-4 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1a2634] shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                    <button
+                        class="absolute right-2 top-2 bottom-2 px-6 rounded-full bg-primary text-white font-bold text-sm hover:bg-blue-600 transition-colors">
+                        검색
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="py-12 bg-background-light dark:bg-background-dark">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8 text-[#111418] dark:text-white">카테고리별 보기</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">forest</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">목재</h3>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">handyman</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">공구</h3>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">agriculture</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">장비</h3>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">electric_bolt</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">전기</h3>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">water_drop</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">설비</h3>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] p-6 rounded-xl text-center hover:shadow-lg transition-all cursor-pointer border border-transparent hover:border-primary">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-2">foundation</span>
+                        <h3 class="font-bold text-[#111418] dark:text-white">석공</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Listings Placeholder -->
+        <section class="py-16 bg-white dark:bg-[#101722]">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-[#111418] dark:text-white">최근 등록된 자재</h2>
+                    <a href="#" class="text-primary font-bold hover:underline">더 보기</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Example Card -->
+                    <div
+                        class="bg-white dark:bg-[#1a2634] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+                        <div class="aspect-square bg-gray-200 relative">
+                            <span
+                                class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold">판매중</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1 truncate text-[#111418] dark:text-white">미사용 시멘트 20포</h3>
+                            <p class="text-sm text-gray-500 mb-3">서울 강남구 논현동 · 2시간 전</p>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xl font-bold text-[#111418] dark:text-white">120,000원</span>
+                                <div class="flex items-center text-gray-400 text-sm gap-1">
+                                    <span class="material-symbols-outlined text-sm">favorite</span> 12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat for demo -->
+                    <div
+                        class="bg-white dark:bg-[#1a2634] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+                        <div class="aspect-square bg-gray-200 relative">
+                            <span
+                                class="absolute top-2 left-2 bg-gray-600 text-white text-xs px-2 py-1 rounded font-bold">예약중</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1 truncate text-[#111418] dark:text-white">철근 D10 2톤</h3>
+                            <p class="text-sm text-gray-500 mb-3">경기 성남시 분당구 · 5시간 전</p>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xl font-bold text-[#111418] dark:text-white">1,500,000원</span>
+                                <div class="flex items-center text-gray-400 text-sm gap-1">
+                                    <span class="material-symbols-outlined text-sm">favorite</span> 45
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+                        <div class="aspect-square bg-gray-200 relative">
+                            <span
+                                class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold">판매중</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1 truncate text-[#111418] dark:text-white">목재 합판 잔여분</h3>
+                            <p class="text-sm text-gray-500 mb-3">서울 송파구 잠실동 · 1일 전</p>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xl font-bold text-[#111418] dark:text-white">50,000원</span>
+                                <div class="flex items-center text-gray-400 text-sm gap-1">
+                                    <span class="material-symbols-outlined text-sm">favorite</span> 8
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#1a2634] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+                        <div class="aspect-square bg-gray-200 relative">
+                            <span
+                                class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold">판매중</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1 truncate text-[#111418] dark:text-white">전동 드릴 세트</h3>
+                            <p class="text-sm text-gray-500 mb-3">인천 연수구 송도동 · 3일 전</p>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xl font-bold text-[#111418] dark:text-white">85,000원</span>
+                                <div class="flex items-center text-gray-400 text-sm gap-1">
+                                    <span class="material-symbols-outlined text-sm">favorite</span> 22
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-[#0b1016] border-t border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500">© 2024 짜투리 Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
