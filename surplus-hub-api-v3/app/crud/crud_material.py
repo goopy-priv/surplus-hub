@@ -26,6 +26,8 @@ class CRUDMaterial(CRUDBase[Material, MaterialCreate, MaterialUpdate]):
         price_min: Optional[int] = None,
         price_max: Optional[int] = None,
         trade_method: Optional[str] = None,
+        condition_grade: Optional[str] = None,
+        location_address: Optional[str] = None,
     ) -> tuple[List[Material], int]:
         query = db.query(Material).options(
             joinedload(Material.seller),
@@ -49,6 +51,12 @@ class CRUDMaterial(CRUDBase[Material, MaterialCreate, MaterialUpdate]):
 
         if trade_method:
             query = query.filter(Material.trade_method == trade_method)
+
+        if condition_grade:
+            query = query.filter(Material.condition_grade == condition_grade)
+
+        if location_address:
+            query = query.filter(Material.location_address.ilike(f"%{location_address}%"))
 
         # Distance filtering using Haversine formula
         if lat is not None and lng is not None and radius is not None:
@@ -123,6 +131,7 @@ class CRUDMaterial(CRUDBase[Material, MaterialCreate, MaterialUpdate]):
             location_lat=obj_in.location.lat,
             location_lng=obj_in.location.lng,
             category=obj_in.category,
+            condition_grade=obj_in.condition_grade,
             status=obj_in.status or "ACTIVE",
             seller_id=seller_id,
         )

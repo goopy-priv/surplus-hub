@@ -17,8 +17,14 @@ class TradeMethod(str, enum.Enum):
 class MaterialStatus(str, enum.Enum):
     ACTIVE = "ACTIVE"
     REVIEWING = "REVIEWING"
+    RESERVED = "RESERVED"
     SOLD = "SOLD"
     HIDDEN = "HIDDEN"
+
+class ConditionGrade(str, enum.Enum):
+    GOOD = "상"
+    FAIR = "중"
+    POOR = "하"
 
 class Material(Base):
     __tablename__ = "materials"
@@ -38,6 +44,7 @@ class Material(Base):
     location_lng = Column(Float, nullable=True)
 
     category = Column(String, index=True)
+    condition_grade = Column(String, nullable=True)
 
     status = Column(String, default="ACTIVE")
     likes_count = Column(Integer, default=0)
