@@ -16,6 +16,7 @@ class MaterialBase(BaseModel):
     trade_method: Optional[str] = Field("DIRECT", alias="tradeMethod")
     location: Location
     category: Optional[str] = None
+    condition_grade: Optional[str] = Field(None, alias="conditionGrade")
     status: Optional[str] = "ACTIVE"
 
     # B1: location 필드가 문자열로 전달될 경우 자동으로 객체로 변환

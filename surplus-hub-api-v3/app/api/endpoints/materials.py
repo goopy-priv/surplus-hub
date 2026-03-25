@@ -35,6 +35,8 @@ def read_materials(
     keyword: Optional[str] = None,
     sort: Optional[str] = None,
     cursor: Optional[int] = None,
+    condition_grade: Optional[str] = None,
+    location: Optional[str] = None,
 ) -> Any:
     # Cursor-based pagination (for mobile infinite scroll)
     if cursor is not None or page == 0:
@@ -54,7 +56,8 @@ def read_materials(
 
     # Offset-based pagination (backward compatible)
     materials, total_count = crud_material.get_multi_with_filters(
-        db, page=page, limit=limit, category=category, keyword=keyword, sort=sort
+        db, page=page, limit=limit, category=category, keyword=keyword, sort=sort,
+        condition_grade=condition_grade, location_address=location,
     )
 
     total_pages = (total_count + limit - 1) // limit if total_count > 0 else 0
@@ -194,7 +197,7 @@ def update_material_status(
     if material.seller_id != current_user.id and not current_user.is_superuser:
         raise HTTPException(status_code=403, detail="Not authorized")
 
-    valid_statuses = {"ACTIVE", "REVIEWING", "SOLD", "HIDDEN"}
+    valid_statuses = {"ACTIVE", "REVIEWING", "RESERVED", "SOLD", "HIDDEN"}
     if status not in valid_statuses:
         raise HTTPException(
             status_code=400,

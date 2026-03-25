@@ -470,3 +470,90 @@ class TestDeleteMaterial:
             headers=auth_headers,
         )
         assert response.status_code == 404
+
+
+# ===== PHASE 1: CONDITION GRADE & LOCATION FILTER =====
+
+_phase1_material_id: int = 0
+
+
+class TestConditionGrade:
+    """Phase 1 B2B fields: condition_grade and location filter."""
+
+    def test_create_with_condition_grade(
+        self, client: TestClient, auth_headers: dict
+    ):
+        """Create material with condition_grade field."""
+        global _phase1_material_id
+        payload = {
+            "title": "LED 조명 부자재",
+            "description": "공장 잉여분 LED 모듈 50개",
+            "price": 300000,
+            "location": {"address": "경기도 안양시"},
+            "quantity": 50,
+            "quantityUnit": "개",
+            "conditionGrade": "상",
+            "photoUrls": [],
+        }
+        response = client.post(
+            f"{API_V1_STR}/materials/", json=payload, headers=auth_headers
+        )
+        assert response.status_code == 200
+        data = response.json()["data"]
+        assert data.get("condition_grade") == "상" or data.get("conditionGrade") == "상"
+        _phase1_material_id = data["id"]
+
+    def test_create_without_condition_grade(
+        self, client: TestClient, auth_headers: dict
+    ):
+        """condition_grade is optional — create should succeed without it."""
+        payload = {
+            "title": "사무실 문짝",
+            "description": "미사용 문짝 10개",
+            "price": 500000,
+            "location": {"address": "서울특별시 강남구"},
+        }
+        response = client.post(
+            f"{API_V1_STR}/materials/", json=payload, headers=auth_headers
+        )
+        assert response.status_code == 200
+        data = response.json()["data"]
+        assert data.get("condition_grade") is None or data.get("conditionGrade") is None
+
+    def test_filter_by_condition_grade(self, client: TestClient):
+        """Filter materials by condition_grade query parameter."""
+        response = client.get(
+            f"{API_V1_STR}/materials/?condition_grade=상"
+        )
+        assert response.status_code == 200
+        data = response.json()["data"]
+        for m in data:
+            assert m.get("condition_grade") == "상" or m.get("conditionGrade") == "상"
+
+    def test_filter_by_location(self, client: TestClient):
+        """Filter materials by location query parameter."""
+        response = client.get(
+            f"{API_V1_STR}/materials/?location=경기도"
+        )
+        assert response.status_code == 200
+        body = response.json()
+        assert body["status"] == "success"
+
+    def test_reserved_status_is_valid(
+        self, client: TestClient, auth_headers: dict
+    ):
+        """RESERVED status should be accepted (MaterialStatus enum fix)."""
+        response = client.patch(
+            f"{API_V1_STR}/materials/{_phase1_material_id}/status",
+            json={"status": "RESERVED"},
+            headers=auth_headers,
+        )
+        assert response.status_code == 200
+        assert response.json()["data"]["status"] == "RESERVED"
+
+        # Restore to ACTIVE
+        client.patch(
+            f"{API_V1_STR}/materials/{_phase1_material_id}/status",
+            json={"status": "ACTIVE"},
+            headers=auth_headers,
+        )
