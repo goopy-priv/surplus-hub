@@ -5,16 +5,35 @@ import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
 const CATEGORIES = [
-  { emoji: "🔩", label: "볼트/너트" },
-  { emoji: "🪵", label: "목재" },
-  { emoji: "🔧", label: "공구" },
-  { emoji: "⚡", label: "전기자재" },
+  { emoji: "💡", label: "조명" },
+  { emoji: "🚪", label: "문/창호" },
   { emoji: "🧱", label: "건축자재" },
-  { emoji: "🛢️", label: "배관" },
-  { emoji: "🏗️", label: "철강" },
-  { emoji: "📦", label: "포장재" },
-  { emoji: "🧪", label: "화학소재" },
-  { emoji: "⚙️", label: "기타" },
+  { emoji: "⚡", label: "전기/배선" },
+  { emoji: "🔧", label: "설비/배관" },
+  { emoji: "🏗️", label: "철강/금속" },
+  { emoji: "🪵", label: "목재" },
+  { emoji: "📦", label: "기타" },
+] as const;
+
+const REGIONS = [
+  "전체",
+  "서울특별시",
+  "경기도",
+  "인천광역시",
+  "부산광역시",
+  "대구광역시",
+  "광주광역시",
+  "대전광역시",
+  "울산광역시",
+  "세종특별자치시",
+  "강원도",
+  "충청북도",
+  "충청남도",
+  "전라북도",
+  "전라남도",
+  "경상북도",
+  "경상남도",
+  "제주특별자치도",
 ] as const;
 
 const FIXED_SORT = "latest" as const;
@@ -24,6 +43,7 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState("");
   const [submittedKeyword, setSubmittedKeyword] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
+  const [selectedRegion, setSelectedRegion] = useState<string>("전체");
   const [sortOption, setSortOption] = useState<"latest" | "price_asc" | "price_desc">("latest");
   const [page, setPage] = useState(1);
   const [materials, setMaterials] = useState<MaterialItem[]>([]);
@@ -36,8 +56,9 @@ export default function Home() {
       category: selectedCategory,
       sort: sortOption,
       keyword: submittedKeyword.trim() ? submittedKeyword.trim() : undefined,
+      location: selectedRegion !== "전체" ? selectedRegion : undefined,
     }),
-    [page, selectedCategory, sortOption, submittedKeyword]
+    [page, selectedCategory, sortOption, submittedKeyword, selectedRegion]
   );
 
   const { data, isLoading, isFetching, error } = useMaterials(queryParams);
@@ -46,7 +67,7 @@ export default function Home() {
     setPage(1);
     setMaterials([]);
     setHasReachedMax(false);
-  }, [selectedCategory, submittedKeyword, sortOption]);
+  }, [selectedCategory, submittedKeyword, sortOption, selectedRegion]);
 
   useEffect(() => {
     if (!data) return;
@@ -108,15 +129,25 @@ export default function Home() {
       {/* Header Section - mobile only */}
       <div className="bg-card border-b border-border px-4 py-3 md:hidden">
         <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-1">
-            <span className="text-sm text-muted-foreground">시화공단</span>
+          <div className="relative flex items-center gap-1">
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="appearance-none cursor-pointer bg-transparent pr-5 text-sm font-medium text-foreground outline-none"
+            >
+              {REGIONS.map((region) => (
+                <option key={region} value={region}>
+                  {region}
+                </option>
+              ))}
+            </select>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4 text-muted-foreground"
+              className="pointer-events-none absolute right-0 h-4 w-4 text-muted-foreground"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
@@ -244,10 +275,10 @@ export default function Home() {
                   </div>
 
                   {/* Status badge (if reserved/sold) */}
-                  {(item.status === "reserved" || item.status === "sold") && (
+                  {(item.status === "RESERVED" || item.status === "SOLD") && (
                     <div className="mb-1">
                       <span className="inline-block rounded bg-accent px-2 py-0.5 text-[11px] text-accent-foreground">
-                        {item.status === "reserved" ? "예약중" : "판매완료"}
+                        {item.status === "RESERVED" ? "예약중" : "판매완료"}
                       </span>
                     </div>
                   )}
@@ -264,7 +295,24 @@ export default function Home() {
                   </div>
 
                   {/* Price */}
-                  <div className="mb-2 text-base font-bold text-foreground">{item.price.toLocaleString()}원</div>
+                  <div className="mb-1 text-base font-bold text-foreground">{item.price.toLocaleString()}원</div>
+
+                  {/* Condition grade badge */}
+                  {item.conditionGrade && (
+                    <div className="mb-1">
+                      <span
+                        className={`inline-block rounded px-2 py-0.5 text-[11px] font-medium ${
+                          item.conditionGrade === "상"
+                            ? "bg-green-100 text-green-700"
+                            : item.conditionGrade === "중"
+                              ? "bg-orange-100 text-orange-700"
+                              : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {item.conditionGrade}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Stats row - like count and inquiry text */}
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">
@@ -310,7 +358,11 @@ export default function Home() {
         </div>
 
         {!showInitialLoading && materials.length === 0 ? (
-          <div className="mt-12 text-center text-muted-foreground">검색 조건에 맞는 자재가 없습니다.</div>
+          <div className="mt-12 flex flex-col items-center gap-4 text-center">
+            <p className="text-lg font-medium text-foreground">아직 등록된 자재가 없어요</p>
+            <p className="text-sm text-muted-foreground">첫 자재를 등록해보세요!</p>
+            <Link href="/register" className="rounded-lg bg-primary px-6 py-3 text-sm font-bold text-primary-foreground">등록하기</Link>
+          </div>
         ) : null}
 
         {!hasReachedMax && materials.length > 0 ? (
@@ -327,23 +379,6 @@ export default function Home() {
         ) : null}
       </div>
 
-      {/* FAB Button (Floating Action Button) */}
-      <Link
-        href="/register"
-        className="fixed bottom-[100px] right-4 z-50 flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 font-bold text-primary-foreground shadow-lg transition-transform hover:scale-105"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2.5}
-          stroke="currentColor"
-          className="h-5 w-5"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-        </svg>
-        등록하기
-      </Link>
     </div>
   );
 }

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --primary: #ed701d;
+    --primary: #2563EB;
     --primary-foreground: #ffffff;
     --background: #f9f7f6;
     --foreground: #151c28;
@@ -12,17 +12,20 @@
     --card-foreground: #151c28;
     --muted: #f1f0ee;
     --muted-foreground: #6a7181;
-    --accent: #fdf0e7;
-    --accent-foreground: #a54a0d;
+    --accent: #EFF6FF;
+    --accent-foreground: #1D4ED8;
     --secondary: #eeeff2;
     --secondary-foreground: #151c28;
     --border: #e2e4e9;
     --input: #e2e4e9;
-    --ring: #ed701d;
+    --ring: #2563EB;
     --destructive: #dc2828;
     --success: #21c45d;
     --warning: #f59f0a;
     --info: #1485f5;
+    --condition-good: #34C759;
+    --condition-fair: #FF9500;
+    --condition-poor: #FF3B30;
   }
 
   * {
@@ -52,7 +55,7 @@
   }
 
   .fab-gradient {
-    background: linear-gradient(135deg, var(--primary), #e65c00);
+    background: linear-gradient(135deg, var(--primary), #1D4ED8);
   }
 
   .safe-bottom {

@@ -12,6 +12,7 @@ export interface MaterialItem {
   quantityUnit?: string;
   tradeMethod?: string;
   status?: string;
+  conditionGrade?: string;
   sellerId: string;
   sellerName?: string;
   sellerAvatarUrl?: string;
@@ -59,6 +60,7 @@ export interface MaterialQueryParams {
   category?: string;
   sort?: "latest" | "price_asc" | "price_desc" | string;
   keyword?: string;
+  location?: string;
   lat?: number;
   lng?: number;
 }

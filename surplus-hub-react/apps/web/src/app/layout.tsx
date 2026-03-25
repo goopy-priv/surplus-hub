@@ -14,8 +14,8 @@ if (!CLERK_PUBLISHABLE_KEY && process.env.NODE_ENV === "production") {
 }
 
 export const metadata: Metadata = {
-  title: "짜투리 - 잉여 건축자재 거래 플랫폼",
-  description: "내 주변 건설 현장의 잉여 자재를 쉽고 빠르게 거래하세요.",
+  title: "잉여자재 - B2B 잉여자재 거래",
+  description: "내 근처 잉여자재를 찾아보세요. 공장/건설 잉여자재 B2B 거래 플랫폼.",
 };
 
 export default function RootLayout({
