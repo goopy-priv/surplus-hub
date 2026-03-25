@@ -21,6 +21,14 @@ const STATUS_LABELS: Record<string, string> = {
   ACTIVE: "판매중",
   RESERVED: "예약중",
   SOLD: "거래완료",
+  reserved: "예약중",
+  sold: "거래완료",
+};
+
+const CONDITION_GRADE_STYLES: Record<string, { label: string; className: string }> = {
+  상: { label: "상 (양호)", className: "bg-green-100 text-green-700" },
+  중: { label: "중 (보통)", className: "bg-orange-100 text-orange-700" },
+  하: { label: "하 (사용감 있음)", className: "bg-red-100 text-red-700" },
 };
 
 const formatTradeMethod = (tradeMethod?: string): string =>
@@ -274,7 +282,18 @@ export default function MaterialDetailPage({ params }: { params: { id: string } 
           </button>
           <div className="h-8 w-px bg-gray-200"></div>
           <div>
-            <p className="font-bold text-lg text-foreground leading-none">{item.price.toLocaleString()}원</p>
+            <div className="flex items-center gap-2 leading-none">
+              <p className="font-bold text-lg text-foreground">{item.price.toLocaleString()}원</p>
+              {(() => {
+                const grade = item.conditionGrade;
+                const style = grade ? CONDITION_GRADE_STYLES[grade] : undefined;
+                return style ? (
+                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${style.className}`}>
+                    {style.label}
+                  </span>
+                ) : null;
+              })()}
+            </div>
             <p className="text-xs text-primary font-medium mt-0.5">거래 조건은 판매자와 협의</p>
           </div>
         </div>

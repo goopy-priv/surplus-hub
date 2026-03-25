@@ -22,6 +22,32 @@ const CATEGORIES = [
 
 const TRADE_METHODS = ["직거래", "택배가능", "둘 다"] as const;
 
+const CONDITION_GRADES = [
+  { label: "상 (양호)", value: "상" },
+  { label: "중 (보통)", value: "중" },
+  { label: "하 (사용감 있음)", value: "하" },
+] as const;
+
+const LOCATIONS = [
+  "서울특별시",
+  "경기도",
+  "인천광역시",
+  "부산광역시",
+  "대구광역시",
+  "광주광역시",
+  "대전광역시",
+  "울산광역시",
+  "세종특별자치시",
+  "강원도",
+  "충청북도",
+  "충청남도",
+  "전라북도",
+  "전라남도",
+  "경상북도",
+  "경상남도",
+  "제주특별자치도",
+] as const;
+
 const AI_ANALYSIS_STEPS = [
   "이미지 인식 중",
   "카테고리 분류 중",
@@ -46,6 +72,8 @@ function RegisterContent() {
     description: "",
     price: "",
     tradeMethod: "직거래" as (typeof TRADE_METHODS)[number],
+    conditionGrade: "" as string,
+    location: "" as string,
   });
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,6 +140,8 @@ function RegisterContent() {
         description: descResult.description,
         price: priceResult.price.toString(),
         tradeMethod: "직거래",
+        conditionGrade: "",
+        location: "",
       });
       setStep("ai-result");
     } catch (err: unknown) {
@@ -144,8 +174,9 @@ function RegisterContent() {
         quantityUnit: "개",
         tradeMethod: form.tradeMethod === "직거래" ? "DIRECT" : "DELIVERY",
         location: {
-          address: "위치 미정",
+          address: form.location || "위치 미정",
         },
+        ...(form.conditionGrade ? { conditionGrade: form.conditionGrade } : {}),
         photoUrls: images.length > 0 ? images : undefined,
       });
 
@@ -485,6 +516,23 @@ function RegisterContent() {
                 </div>
               </div>
 
+              {/* Condition Grade */}
+              <div>
+                <label className="block text-sm font-bold text-foreground mb-2">상태 등급</label>
+                <select
+                  value={form.conditionGrade}
+                  onChange={(e) => setForm({ ...form, conditionGrade: e.target.value })}
+                  className="w-full p-3 border border-border rounded-lg text-sm bg-card focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                >
+                  <option value="">선택 안 함</option>
+                  {CONDITION_GRADES.map((grade) => (
+                    <option key={grade.value} value={grade.value}>
+                      {grade.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               {/* Description */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-bold text-foreground mb-2">
@@ -625,6 +673,22 @@ function RegisterContent() {
                     );
                   })}
                 </div>
+              </div>
+              {/* Location */}
+              <div>
+                <label className="block text-sm font-bold text-foreground mb-2">위치 (시도)</label>
+                <select
+                  value={form.location}
+                  onChange={(e) => setForm({ ...form, location: e.target.value })}
+                  className="w-full p-3 border border-border rounded-lg text-sm bg-card focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                >
+                  <option value="">선택 안 함</option>
+                  {LOCATIONS.map((loc) => (
+                    <option key={loc} value={loc}>
+                      {loc}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
 
